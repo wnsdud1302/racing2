@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.net.MalformedURLException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,11 +21,17 @@ class Menu extends JFrame implements ActionListener {
 	private JLabel label3;
 	private JLabel bg;
 
+	public final static String RESOURCE_PATH = "app/src/main/resources";
+
+
+	
 	
 	public Menu() {
+		
 		this.setSize(500, 800);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("레이싱 게임");
+		
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
@@ -34,7 +42,7 @@ class Menu extends JFrame implements ActionListener {
 		label3 = new JLabel("Racing Game");
 		label3.setForeground(Color.green);
 		label3.setFont(new Font("Serif", Font.BOLD, 21));
-		bg = new JLabel("", new ImageIcon("menu_bg.png"),JLabel.CENTER);	
+		bg = new JLabel("", new ImageIcon(RESOURCE_PATH + "/menu_bg.png"),JLabel.CENTER);	
 		bg.setBounds(0,0,500,800);
 
 		s_button.addActionListener(this);
@@ -60,7 +68,12 @@ class Menu extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource() == s_button) 
 		{
-			new GUI();
+			try {
+				new GUI();
+			} catch (MalformedURLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
 		
@@ -75,7 +88,6 @@ class Menu extends JFrame implements ActionListener {
 public class main_menu {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Menu m = new Menu();
 	}
 
