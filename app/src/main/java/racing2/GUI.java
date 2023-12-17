@@ -38,11 +38,5 @@ public class GUI extends JFrame {
 		g.drawImage(game_screen, 0, 0, null);
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 
 }

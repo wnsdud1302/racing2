@@ -26,7 +26,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'racing2.App'
+    mainClass = 'racing2.main_menu'
 }
 
 tasks.named('test') {
